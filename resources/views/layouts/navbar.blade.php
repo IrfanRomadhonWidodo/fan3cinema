@@ -1,5 +1,6 @@
 {{-- layouts/navbar.blade.php --}}
-<nav class="bg-gray-900 border-b border-purple-700/40 shadow-lg">
+<nav class="fixed top-0 left-0 w-full z-50 bg-gray-950 border-b border-purple-700/50 shadow-2xl">
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             {{-- Logo --}}

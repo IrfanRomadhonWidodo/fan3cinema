@@ -1,5 +1,4 @@
 <?php
-
 // app/Models/Studio.php
 
 namespace App\Models;
@@ -17,5 +16,8 @@ class Studio extends Model
         'nama_studio',
         'kapasitas',
     ];
-}
 
+    protected $casts = [
+        'kapasitas' => 'integer',
+    ];
+}

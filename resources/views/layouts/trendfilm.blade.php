@@ -39,7 +39,7 @@
                         {{-- Action Buttons --}}
                         <div class="flex space-x-3">
                             <button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 border border-white/20">
-                                More Info
+                                13/06/25
                             </button>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         
                         <div class="flex space-x-3">
                             <button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 border border-white/20">
-                                More Info
+                                15/12/21
                             </button>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         
                         <div class="flex space-x-3">
                             <button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 border border-white/20">
-                                More Info
+                                21/07/23
                             </button>
                         </div>
                     </div>
