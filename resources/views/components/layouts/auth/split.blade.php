@@ -3,39 +3,50 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
-        <div class="relative grid h-dvh flex-col items-center justify-center px-8 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0">
-            <div class="bg-muted relative hidden h-full flex-col p-10 text-white lg:flex dark:border-e dark:border-neutral-800">
-                <div class="absolute inset-0 bg-neutral-900"></div>
-                <a href="{{ route('home') }}" class="relative z-20 flex items-center text-lg font-medium" wire:navigate>
-                    <span class="flex h-10 w-10 items-center justify-center rounded-md">
-                        <x-app-logo-icon class="me-2 h-7 fill-current text-white" />
+    <body class="min-h-screen bg-white antialiased">
+        <div class="relative grid h-dvh lg:grid-cols-2">
+            <!-- Left Panel - Form -->
+            <div class="flex items-center justify-center bg-white px-8 py-12">
+                <div class="w-full max-w-sm space-y-8">
+                    <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                    <span class="ml-2 text-2xl font-extrabold tracking-wide bg-gradient-to-r from-purple-400 via-black to-purple-500 text-transparent bg-clip-text">
+                        Fan3Cinema
                     </span>
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                </div>
 
-                @php
-                    [$message, $author] = str(Illuminate\Foundation\Inspiring::quotes()->random())->explode('-');
-                @endphp
-
-                <div class="relative z-20 mt-auto">
-                    <blockquote class="space-y-2">
-                        <flux:heading size="lg">&ldquo;{{ trim($message) }}&rdquo;</flux:heading>
-                        <footer><flux:heading>{{ trim($author) }}</flux:heading></footer>
-                    </blockquote>
+                    <!-- Form Container -->
+                    <div class="space-y-6">
+                        {{ $slot }}
+                    </div>
                 </div>
             </div>
-            <div class="w-full lg:p-8">
-                <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-                    <a href="{{ route('home') }}" class="z-20 flex flex-col items-center gap-2 font-medium lg:hidden" wire:navigate>
-                        <span class="flex h-9 w-9 items-center justify-center rounded-md">
-                            <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
-                        </span>
 
-                        <span class="sr-only">{{ config('app.name', 'Laravel') }}</span>
-                    </a>
-                    {{ $slot }}
+            <!-- Right Panel - Abstract Background -->
+            <div class="hidden lg:block relative overflow-hidden">
+                <!-- Beautiful abstract gradient background -->
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600"></div>
+                
+                <!-- Organic shapes -->
+                <div class="absolute inset-0">
+                    <!-- Large circle top right -->
+                    <div class="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-br from-purple-300 to-purple-500 rounded-full opacity-80 blur-3xl"></div>
+                    
+                    <!-- Medium circle middle left -->
+                    <div class="absolute top-1/3 -left-16 w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full opacity-70 blur-2xl"></div>
+                    
+                    <!-- Small circle bottom center -->
+                    <div class="absolute bottom-20 left-1/3 w-48 h-48 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-60 blur-xl"></div>
+                    
+                    <!-- Additional organic shape -->
+                    <div class="absolute top-1/2 right-1/4 w-56 h-56 bg-gradient-to-br from-purple-200 to-purple-400 rounded-full opacity-50 blur-2xl transform rotate-45"></div>
                 </div>
+
+                <!-- Subtle overlay for depth -->
+                <div class="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent"></div>
             </div>
         </div>
         @fluxScripts
