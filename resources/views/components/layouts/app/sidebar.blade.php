@@ -23,8 +23,8 @@
                 <flux:navlist.item icon="film" href="/studios" wire:navigate>Kelola Studio</flux:navlist.item>
                 <flux:navlist.item icon="video-camera" href="/films" wire:navigate>Kelola Film</flux:navlist.item>
                 <flux:navlist.item icon="tag" href="/genres" wire:navigate>Kelola Genre</flux:navlist.item>
-                <flux:navlist.item icon="calendar" :href="route('dashboard')" wire:navigate>{{ __('Jadwal') }}</flux:navlist.item>
-                <flux:navlist.item icon="ticket" :href="route('dashboard')" wire:navigate>{{ __('Tiket') }}</flux:navlist.item>
+                <flux:navlist.item icon="calendar" href="/jadwal" wire:navigate>Kelola Jadwal Tayang</flux:navlist.item>
+                {{-- <flux:navlist.item icon="ticket" href="/tikets" wire:navigate>Kelola Tiket</flux:navlist.item> --}}
             </flux:navlist.group>
         </flux:navlist>
 

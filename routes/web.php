@@ -8,6 +8,8 @@ use App\Livewire\StudioManager;
 use App\Livewire\UserManager;
 use App\Livewire\GenreManager;
 use App\Livewire\FilmManager;
+use App\Livewire\TiketManager;
+use App\Livewire\JadwalManager;
 
 Route::get('/', function () {
     return view('home');
@@ -34,4 +36,6 @@ Route::get('/studios', StudioManager::class)->name('studios.index');
 Route::get('/users', UserManager::class)->name('users.index');
 Route::get('/genres', GenreManager::class)->name('genres.index');
 Route::get('/films', FilmManager::class)->name('films.index');
+Route::get('/jadwal', JadwalManager::class)->name('jadwal.index');
+
 require __DIR__.'/auth.php';
