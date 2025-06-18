@@ -18,7 +18,7 @@
                     type="text" 
                     wire:model.live.debounce.500ms="search"
                     placeholder="Cari nama studio..." 
-                    class="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200"
+                    class="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200"
                 >
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg class="h-5 w-5 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             
-            <select wire:model.live="perPage" class="border border-gray-300 dark:border-gray-800 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors duration-200">
+            <select wire:model.live="perPage" class="border border-gray-300 dark:border-gray-800 rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors duration-200">
                 <option value="5">5 per halaman</option>
                 <option value="10">10 per halaman</option>
                 <option value="25">25 per halaman</option>
@@ -50,7 +50,7 @@
             <button 
                 wire:click="create"
                 type="button"
-                class="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center"
+                class="bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 flex items-center"
             >
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -83,7 +83,7 @@
                                 <div class="text-sm font-medium text-gray-900 dark:text-white">{{ $studio->nama_studio }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-300">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-300">
                                     {{ $studio->kapasitas }} orang
                                 </span>
                             </td>
@@ -160,7 +160,7 @@
                                 type="text" 
                                 id="nama_studio"
                                 wire:model.defer="nama_studio"
-                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200 @error('nama_studio') border-red-500 dark:border-red-500 @enderror"
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200 @error('nama_studio') border-red-500 dark:border-red-500 @enderror"
                                 placeholder="Masukkan nama studio"
                             >
                             @error('nama_studio')
@@ -176,7 +176,7 @@
                                 type="number" 
                                 id="kapasitas"
                                 wire:model.defer="kapasitas"
-                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200 @error('kapasitas') border-red-500 dark:border-red-500 @enderror"
+                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-200 @error('kapasitas') border-red-500 dark:border-red-500 @enderror"
                                 placeholder="Masukkan kapasitas studio"
                                 min="1"
                             >
@@ -195,7 +195,7 @@
                             </button>
                             <button 
                                 type="submit"
-                                class="px-4 py-2 bg-emerald-600 dark:bg-emerald-500 text-white rounded-md hover:bg-emerald-700 dark:hover:bg-emerald-600 transition duration-200"
+                                class="px-4 py-2 bg-purple-600 dark:bg-purple-500 text-white rounded-md hover:bg-purple-700 dark:hover:bg-purple-600 transition duration-200"
                                 wire:loading.attr="disabled"
                                 wire:loading.class="opacity-50 cursor-not-allowed"
                             >
@@ -255,7 +255,7 @@
     <div wire:loading.delay.longer class="fixed inset-0 bg-black/30 dark:bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
             <div class="flex items-center space-x-2">
-                <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-emerald-500 dark:border-emerald-400"></div>
+                <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-purple-500 dark:border-purple-400"></div>
                 <span class="text-gray-700 dark:text-gray-300">Sedang memproses...</span>
             </div>
         </div>
@@ -273,7 +273,7 @@
             function showAlert(type, message) {
                 const alertContainer = document.getElementById('alert-container');
                 const alertClass = {
-                    'success': 'bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300',
+                    'success': 'bg-purple-100 dark:bg-purple-900 border-purple-400 dark:border-purple-600 text-purple-700 dark:text-purple-300',
                     'error': 'bg-red-100 dark:bg-red-900 border-red-400 dark:border-red-600 text-red-700 dark:text-red-300',
                     'info': 'bg-purple-100 dark:bg-purple-900 border-purple-400 dark:border-purple-600 text-purple-700 dark:text-purple-300'
                 };

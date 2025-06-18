@@ -5,7 +5,8 @@ use Livewire\Volt\Volt;
 use App\Http\Controllers\StudioController;
 use App\Http\Livewire\KelolaStudio;
 use App\Livewire\StudioManager;
-
+use App\Livewire\UserManager;
+use App\Livewire\GenreManager;
 
 
 Route::get('/', function () {
@@ -30,7 +31,7 @@ Route::get('/film', [App\Http\Controllers\View_FilmController::class, 'index'])-
 
 
 Route::get('/studios', StudioManager::class)->name('studios.index');
-
-
+Route::get('/users', UserManager::class)->name('users.index');
+Route::get('/genres', GenreManager::class)->name('genres.index');
 
 require __DIR__.'/auth.php';

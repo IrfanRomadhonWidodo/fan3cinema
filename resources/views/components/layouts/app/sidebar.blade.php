@@ -19,11 +19,11 @@
         <flux:navlist variant="outline">
             <flux:navlist.group :heading="__('Menu')" class="grid">
                 <flux:navlist.item icon="home" :href="route('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
-                <flux:navlist.item icon="user" :href="route('dashboard')" wire:navigate>{{ __('User') }}</flux:navlist.item>
+                <flux:navlist.item icon="user" href="/users" wire:navigate>Kelola User</flux:navlist.item>
                 <flux:navlist.item icon="film" href="/studios" wire:navigate>Kelola Studio</flux:navlist.item>
 
                 <flux:navlist.item icon="video-camera" :href="route('dashboard')" wire:navigate>{{ __('Film') }}</flux:navlist.item>
-                <flux:navlist.item icon="tag" :href="route('dashboard')" wire:navigate>{{ __('Genre') }}</flux:navlist.item>
+                <flux:navlist.item icon="tag" href="/genres" wire:navigate>Kelola Genre</flux:navlist.item>
                 <flux:navlist.item icon="calendar" :href="route('dashboard')" wire:navigate>{{ __('Jadwal') }}</flux:navlist.item>
                 <flux:navlist.item icon="ticket" :href="route('dashboard')" wire:navigate>{{ __('Tiket') }}</flux:navlist.item>
             </flux:navlist.group>
