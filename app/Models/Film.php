@@ -19,4 +19,5 @@ class Film extends Model
     {
         return $this->belongsTo(Genre::class);
     }
+    
 }

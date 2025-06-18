@@ -10,23 +10,32 @@
             <h3 class="text-3xl text-white font-semibold mb-6 border-b border-gray-700 pb-2">{{ $genre }}</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
                 @foreach($genreFilms as $film)
-                    <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-600/40 transition duration-300 relative">
-                        <div class="relative group">
-                            <img src="{{ asset('storage/' . $film->poster) }}" alt="{{ $film->judul }}" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                                <a href="#" class="w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 rounded-lg transition duration-300">
-                                    Pesan Tiket
-                                </a>
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="text-xl font-bold text-white mb-1 truncate">{{ $film->judul }}</h4>
-                            <div class="text-purple-300 text-sm">
-                                <p>Sutradara: <span class="text-white">{{ $film->sutradara }}</span></p>
-                                <p>Tahun: <span class="text-white">{{ $film->tahun }}</span></p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-600/40 transition-all duration-300 group">
+    <!-- Poster film -->
+    <img src="{{ asset('storage/' . $film->poster) }}" alt="{{ $film->judul }}" class="w-full h-[400px] object-cover">
+    
+    <!-- Overlay tombol saat hover -->
+    <div class="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 z-20">
+        <a href="#" class="mb-20 w-11/12 text-center bg-purple-600/90 backdrop-blur-sm hover:bg-purple-700/90 text-white font-semibold py-2 rounded-lg transition-all duration-300 border border-purple-500/30">
+            Pesan Tiket
+        </a>
+    </div>
+    
+    <!-- Informasi film dengan efek plastik (frosted glass) - hanya muncul saat hover -->
+    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white/10 backdrop-blur-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+        <h4 class="text-lg font-bold truncate">{{ $film->judul }}</h4>
+        <div class="text-sm">
+            <div class="flex justify-between">
+                <span class="text-purple-300">Sutradara:</span>
+                <span class="text-gray-200 truncate">{{ $film->sutradara }}</span>
+            </div>
+            <div class="flex justify-between">
+                <span class="text-purple-300">Tahun:</span>
+                <span class="text-gray-200">{{ $film->tahun }}</span>
+            </div>
+        </div>
+    </div>
+</div>
                 @endforeach
             </div>
         </div>
