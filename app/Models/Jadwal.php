@@ -79,4 +79,10 @@ class Jadwal extends Model
     {
         return $this->tanggal->format('d/m/Y') . ' ' . date('H:i', strtotime($this->jam));
     }
+    
+    public function tiket()
+    {
+        return $this->hasMany(Tiket::class, 'jadwal_tayang_id');
+    }
+
 }

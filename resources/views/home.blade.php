@@ -9,6 +9,8 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     {{-- Atau jika menggunakan CDN Tailwind --}}
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    @livewireStyles
+
 </head>
 <body class="bg-gray-900 text-white">
     {{-- Include Navbar --}}
@@ -17,9 +19,11 @@
         @include('layouts.trendfilm')
         @include('layouts.layanan')
         @include('layouts.studio')
-        @include('layouts.film')
+        @livewire('film-list')
+        @livewire('pesan-tiket')
         @include('layouts.footer')
     </div>
+    @livewireScripts
 
     {{-- Optional: Include Alpine.js for interactivity --}}
 </body>

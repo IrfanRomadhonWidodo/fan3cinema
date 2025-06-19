@@ -18,13 +18,12 @@
 
         <flux:navlist variant="outline">
             <flux:navlist.group :heading="__('Menu')" class="grid">
-                <flux:navlist.item icon="home" :href="route('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
                 <flux:navlist.item icon="user" href="/users" wire:navigate>Kelola User</flux:navlist.item>
                 <flux:navlist.item icon="film" href="/studios" wire:navigate>Kelola Studio</flux:navlist.item>
                 <flux:navlist.item icon="video-camera" href="/films" wire:navigate>Kelola Film</flux:navlist.item>
                 <flux:navlist.item icon="tag" href="/genres" wire:navigate>Kelola Genre</flux:navlist.item>
                 <flux:navlist.item icon="calendar" href="/jadwal" wire:navigate>Kelola Jadwal Tayang</flux:navlist.item>
-                {{-- <flux:navlist.item icon="ticket" href="/tikets" wire:navigate>Kelola Tiket</flux:navlist.item> --}}
+                <flux:navlist.item icon="ticket" href="/tikets" wire:navigate>Kelola Tiket</flux:navlist.item>
             </flux:navlist.group>
         </flux:navlist>
 

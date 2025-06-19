@@ -28,7 +28,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/', [App\Http\Controllers\View_StudioController::class, 'index'])->name('home');
-Route::get('/film', [App\Http\Controllers\View_FilmController::class, 'index'])->name('film');
+Route::get('/film', function () {
+    return view('film-page'); // buat view baru yang hanya contain livewire component
+})->name('film');
 
 
 
@@ -37,5 +39,8 @@ Route::get('/users', UserManager::class)->name('users.index');
 Route::get('/genres', GenreManager::class)->name('genres.index');
 Route::get('/films', FilmManager::class)->name('films.index');
 Route::get('/jadwal', JadwalManager::class)->name('jadwal.index');
+Route::get('/tikets', TiketManager::class)->name('tikets.index');
 
+
+Route::get('/admin/kelola-user', UserManager::class)->name('user-manager');
 require __DIR__.'/auth.php';
