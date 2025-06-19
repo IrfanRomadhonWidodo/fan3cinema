@@ -28,13 +28,14 @@
             <div>
                 <h4 class="font-semibold text-white mb-2">Ikuti Kami</h4>
                 <ul class="space-y-1">
-                    <li><a href="#" class="text-purple-400">Instagram</a></li>
-                    <li><a href="#" class="text-purple-400">YouTube</a></li>
+                    <li><a href="https://www.instagram.com/irfan_romadhonn/" target="_blank" class="text-purple-400 hover:underline">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@irfanromadhonwidodo2035" target="_blank" class="text-purple-400 hover:underline">YouTube</a></li>
                 </ul>
             </div>
+
             <div>
                 <h4 class="font-semibold text-white mb-2">Developer</h4>
-                <p><a href="https://github.com/irfanromadhonwidodo" class="text-purple-400">GitHub - Irfan</a></p>
+                <p><a href="https://github.com/IrfanRomadhonWidodo" target="_blank" class="text-purple-400 hover:underline">GitHub - Irfan</a></p>
             </div>
         </div>
 

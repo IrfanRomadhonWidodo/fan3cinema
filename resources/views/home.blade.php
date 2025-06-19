@@ -16,12 +16,37 @@
     {{-- Include Navbar --}}
     @include('layouts.navbar')
     <div class="pt-20">
+    {{-- Trend Film --}}
+    <div id="trendfilm">
         @include('layouts.trendfilm')
+    </div>
+
+    {{-- Layanan --}}
+    <div id="layanan">
         @include('layouts.layanan')
+    </div>
+
+    {{-- Studio --}}
+    <div id="studio" class="scroll-mt-20">
         @include('layouts.studio')
+    </div>
+
+    {{-- Film List (Livewire) --}}
+    <div id="film" class="scroll-mt-20">
         @livewire('film-list')
+    </div>
+
+@auth
+    {{-- Pemesanan Tiket --}}
+    <div id="pesan" class="scroll-mt-20">
         @livewire('pesan-tiket')
-        @include('layouts.footer')
+    </div>
+@endauth
+
+
+    {{-- Footer --}}
+    @include('layouts.footer')
+
     </div>
     @livewireScripts
 

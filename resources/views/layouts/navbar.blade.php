@@ -15,36 +15,41 @@
 
             {{-- Menu --}}
             <div class="hidden md:flex gap-8 px-4">
-                <a href="{{ route('home') }}" 
+                <a href="#studio" 
                 class="relative text-sm font-medium text-gray-300 transition duration-200
                         hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
                     Studio
                 </a>
-                <a href="#" 
+                <a href="#film" 
                 class="relative text-sm font-medium text-gray-300 transition duration-200
                         hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
                     Film
                 </a>
-                <a href="#" 
+                <a href="#film" 
                 class="relative text-sm font-medium text-gray-300 transition duration-200
                         hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
                         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
                     Jadwal
                 </a>
-                <a href="#" 
-                class="relative text-sm font-medium text-gray-300 transition duration-200
-                        hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
-                        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
-                    Pesan
-                </a>
-                <a href="#" 
-                class="relative text-sm font-medium text-gray-300 transition duration-200
-                        hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
-                        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
-                    Tiket Saya
-                </a>
+                @auth
+                    <a href="#pesan" 
+                    class="relative text-sm font-medium text-gray-300 transition duration-200
+                            hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
+                            after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
+                        Pesan
+                    </a>
+                @endauth
+
+                @guest
+                    <a href="{{ route('login') }}" 
+                    class="relative text-sm font-medium text-gray-300 transition duration-200
+                            hover:bg-gradient-to-r hover:from-purple-400 hover:to-purple-600 hover:bg-clip-text hover:text-transparent
+                            after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-purple-600 hover:after:w-full after:transition-all after:duration-300">
+                        Pesan
+                    </a>
+                @endguest
             </div>
 
 

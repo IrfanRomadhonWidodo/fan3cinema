@@ -60,7 +60,7 @@ class PesanTiket extends Component
     {
         $this->selectedFilm = $this->films[$filmIndex];
         $this->selectedJadwalId = $this->selectedFilm['id'];
-        $this->jumlahTiket = 1;
+        $this->jumlahTiket =  1;
         $this->totalHarga = $this->selectedFilm['harga'];
         $this->showModal = true;
         $this->showPayment = false;
@@ -116,6 +116,7 @@ class PesanTiket extends Component
 
     public function selesaiPemesanan()
     {
+        
         if ($this->selectedJadwalId && $this->jumlahTiket > 0) {
             $jadwal = Jadwal::find($this->selectedJadwalId);
             
@@ -132,7 +133,7 @@ class PesanTiket extends Component
             }
         }
     }
-
+    
     public function render()
     {
         return view('livewire.pesan-tiket');

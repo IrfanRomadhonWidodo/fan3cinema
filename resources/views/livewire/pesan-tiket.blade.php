@@ -1,12 +1,18 @@
 <div class="min-h-screen bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="text-3xl font-bold mb-8 text-center text-purple-400">Daftar Film & Tiket</h2>
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white mb-2">Pemesanan Tiket</h2>
+            <p class="text-purple-200 text-lg">Silakan pilih jumlah tiket yang ingin dipesan</p>
+            <div class="w-20 h-1 bg-purple-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
 
         @if (session()->has('message'))
-            <div class="bg-purple-900 border border-purple-500 text-purple-200 px-4 py-3 rounded mb-4">
+            <div id="flash-message" class="bg-purple-900 border border-purple-500 text-purple-200 px-4 py-3 rounded mb-4">
                 {{ session('message') }}
             </div>
         @endif
+
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($films as $index => $film)
@@ -26,8 +32,8 @@
 
         <!-- Modal Popup -->
         @if($showModal)
-            <div class="fixed inset-0 bg-black/30 dark:bg-black/40 backdrop-blur-sm overflow-y-auto h-full w-full z-50 transition-opacity duration-200" wire:click="closeModal">
-                <div class="bg-gray-800 border border-purple-500 rounded-lg shadow-2xl p-6 w-full max-w-md mx-4 mt-20" wire:click.stop>
+            <div class="fixed inset-0 bg-black/30 dark:bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center" wire:click="closeModal">
+            <div class="bg-gray-800 border border-purple-500 rounded-lg shadow-2xl p-6 w-full max-w-md mx-auto max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden" wire:click.stop>
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-semibold text-white">Pesan Tiket</h3>
                         <button wire:click="closeModal" class="text-gray-400 hover:text-purple-400 transition">
@@ -49,9 +55,7 @@
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-300 mb-2">Jumlah Tiket:</label>
                             <div class="flex items-center space-x-3">
-                                <button wire:click="decrementTiket" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded transition">-</button>
                                 <input wire:model.live="jumlahTiket" type="number" min="1" max="{{ $selectedFilm['tersedia'] }}" class="w-20 text-center bg-gray-700 border border-purple-500 text-white rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-500">
-                                <button wire:click="incrementTiket" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded transition">+</button>
                             </div>
                         </div>
 
@@ -97,3 +101,17 @@
         @endif
     </div>
 </div>
+
+<script>
+    window.addEventListener('flash-message-show', () => {
+        const flash = document.getElementById('flash-message');
+        if (flash) {
+            setTimeout(() => {
+                flash.style.transition = 'opacity 0.5s ease';
+                flash.style.opacity = '0';
+                setTimeout(() => flash.remove(), 500);
+            }, 4000); // 4 detik
+        }
+    });
+</script>
+

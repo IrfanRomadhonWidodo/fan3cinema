@@ -51,11 +51,20 @@
                 <div class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-purple-600/40 transition-all duration-300 group">
                     <img src="{{ asset('storage/' . $film->poster) }}" alt="{{ $film->judul }}" class="w-full h-[400px] object-cover">
 
-                    <div class="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 z-20">
-                        <a href="#" class="mb-20 w-11/12 text-center bg-purple-600/90 backdrop-blur-sm hover:bg-purple-700/90 text-white font-semibold py-2 rounded-lg transition-all duration-300 border border-purple-500/30">
+                   <div class="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 z-20">
+                    @auth
+                        <a href="#pesan" class="mb-20 w-11/12 text-center bg-purple-600/90 backdrop-blur-sm hover:bg-purple-700/90 text-white font-semibold py-2 rounded-lg transition-all duration-300 border border-purple-500/30">
                             Pesan Tiket
                         </a>
-                    </div>
+                    @endauth
+
+                    @guest
+                        <a href="{{ route('login') }}" class="mb-20 w-11/12 text-center bg-purple-600/90 backdrop-blur-sm hover:bg-purple-700/90 text-white font-semibold py-2 rounded-lg transition-all duration-300 border border-purple-500/30">
+                            Login untuk Pesan Tiket
+                        </a>
+                    @endguest
+                </div>
+
 
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white/10 backdrop-blur-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                         <h4 class="text-lg font-bold truncate">{{ $film->judul }}</h4>
