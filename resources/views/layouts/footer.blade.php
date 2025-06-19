@@ -1,6 +1,5 @@
 <footer class="bg-gray-950 border-t border-purple-700/50 mt-16">
     <div class="max-w-7xl mx-auto px-6 py-12">
-        {{-- Logo dan deskripsi --}}
         <div class="text-center mb-10">
             <div class="flex justify-center items-center space-x-2 mb-4">
                 <svg class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -11,7 +10,7 @@
                 </span>
             </div>
             <p class="text-sm text-gray-400 max-w-xl mx-auto">
-                Nikmati pengalaman sinema terbaik bersama Fan3Cinema. Reservasi tiket cepat, nyaman, dan modern.
+                Nikmati pengalaman cinema terbaik bersama Fan3Cinema. Reservasi tiket cepat, nyaman, dan modern.
             </p>
         </div>
 
