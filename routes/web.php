@@ -29,10 +29,11 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/', [App\Http\Controllers\View_StudioController::class, 'index'])->name('home');
 Route::get('/film', function () {
-    return view('film-page'); // buat view baru yang hanya contain livewire component
+    return view('film-page'); 
 })->name('film');
 
 
+//CRUD via laravel livewire
 
 Route::get('/studios', StudioManager::class)->name('studios.index');
 Route::get('/users', UserManager::class)->name('users.index');

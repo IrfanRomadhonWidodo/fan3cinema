@@ -21,7 +21,7 @@ new #[Layout('components.layouts.auth.split')] class extends Component {
     public bool $remember = false;
 
     /**
-     * Handle an incoming authentication request.
+     * Menangani permintaan autentikasi yang masuk.
      */
     public function login(): void
     {
@@ -44,7 +44,7 @@ new #[Layout('components.layouts.auth.split')] class extends Component {
     }
 
     /**
-     * Ensure the authentication request is not rate limited.
+     * Pastikan permintaan autentikasi tidak dibatasi tarifnya.
      */
     protected function ensureIsNotRateLimited(): void
     {
@@ -65,7 +65,7 @@ new #[Layout('components.layouts.auth.split')] class extends Component {
     }
 
     /**
-     * Get the authentication rate limiting throttle key.
+     * Dapatkan kunci pembatas laju autentikasi.
      */
     protected function throttleKey(): string
     {
